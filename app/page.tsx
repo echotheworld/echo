@@ -7,6 +7,7 @@ import { Timeline, TimelineItem } from "@/components/ui/timeline"
 import { FadeIn, FadeInStagger } from "@/components/scroll-animation"
 import { Footer } from "@/components/ui/footer"
 import Image from 'next/image'
+import { ViewCounter } from "@/components/view-counter"
 
 // Define your tech stack
 const techStack = [
@@ -400,33 +401,57 @@ export default function Home() {
           </div>
         </div>
 
+        {/* View Counter Section */}
+        <div className="bg-background py-16 relative overflow-hidden">
+          {/* Grid pattern at the back */}
+          <div className="absolute inset-0 grid-pattern -z-30" />
+          
+          {/* Gradient overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent -z-20" />
+          
+          <div className="container px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Total Views 👀
+            </h2>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="text-4xl md:text-6xl font-bold text-primary flex items-center justify-center gap-2">
+                <ViewCounter />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* PayPal support section */}
         <div className="bg-background py-16 relative overflow-hidden">
-          <div className="container px-4 mt-16">
-            <FadeInStagger>
-              <div className="max-w-xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                  Maybe you can buy me a coffee? ☕
-                </h2>
-                <a 
-                  href="https://www.paypal.com/paypalme/jerichojanf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg 
-                    bg-[#0070BA] hover:bg-[#003087] text-white 
-                    transition-all duration-300 hover:scale-105"
-                >
-                  <Image 
-                    src="/icons/paypal.svg" 
-                    alt="PayPal" 
-                    width={20}
-                    height={20}
-                    className="h-5 w-5"
-                  />
-                  Support via PayPal
-                </a>
-              </div>
-            </FadeInStagger>
+          {/* Grid pattern at the back */}
+          <div className="absolute inset-0 grid-pattern -z-30" />
+          
+          {/* Gradient overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent -z-20" />
+          
+          <div className="container px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Maybe you can buy me a coffee? ☕
+            </h2>
+            <div className="max-w-4xl mx-auto text-center">
+              <a 
+                href="https://www.paypal.com/paypalme/jerichojanf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg 
+                  bg-[#0070BA] hover:bg-[#003087] text-white 
+                  transition-all duration-300 hover:scale-105"
+              >
+                <Image 
+                  src="/icons/paypal.svg" 
+                  alt="PayPal" 
+                  width={20}
+                  height={20}
+                  className="h-5 w-5"
+                />
+                Support via PayPal
+              </a>
+            </div>
           </div>
         </div>
       </main>
